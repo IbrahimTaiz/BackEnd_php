@@ -1,3 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? 'Guest';
+    $color = $_POST['color'] ?? 'black';
+    header(
+        'Location: result.php?name=' . urlencode($name) . '&color=' . urlencode($color),
+        true,
+        303
+    );
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +22,19 @@
     <title>Document</title>
 </head>
 <body>
-            // creat form
-    <form action="index.php" method="POST">
-        <label for="name">user name:</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name:">
-        <label for="color">favorite color:</label>
-        <input type="color" id="color" name="color" value="#FFFFFF">
-                <input type="submit" value="Send">
-    </form>
 
-    <?php
-        // display server time
-        echo date('Y-m-d H:i:s');
-        ?>
+<form action="index.php" method="POST">
+    <label for="name">user name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name:">
+    <label for="color">favorite color:</label>
+    <input type="color" id="color" name="color" value="#FFFFFF">
+    <input type="submit" value="Send">
+</form>
+
+<?php
+// Display current time
+echo date('H:i:s');
+?>
+
 </body>
 </html>
