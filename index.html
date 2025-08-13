@@ -6,11 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-        <?php
+            // creat form
+    <form action="index.php" method="POST">
+        <label for="name">user name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name:">
+        <label for="color">favorite color:</label>
+        <input type="color" id="color" name="color" value="#FFFFFF">
+                <input type="submit" value="Send">
+    </form>
+
+    <?php
         // display server time
         echo date('Y-m-d H:i:s');
-
-        
         ?>
 </body>
 </html>
