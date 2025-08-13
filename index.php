@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         true,
         303
     );
-    exit;
 }
 ?>
 
