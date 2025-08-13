@@ -1,5 +1,5 @@
 <?php
-
+declare(strict_types=1);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? 'Guest';
     $color = $_POST['color'] ?? 'black';
